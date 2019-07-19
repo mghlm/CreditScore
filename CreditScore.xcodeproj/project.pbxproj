@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D79322E1C6D2000F4004 /* AppDelegate.swift */; };
-		CC64D79622E1C6D2000F4004 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D79522E1C6D2000F4004 /* ViewController.swift */; };
 		CC64D79922E1C6D2000F4004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC64D79722E1C6D2000F4004 /* Main.storyboard */; };
 		CC64D79B22E1C6D3000F4004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC64D79A22E1C6D3000F4004 /* Assets.xcassets */; };
 		CC64D79E22E1C6D3000F4004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC64D79C22E1C6D3000F4004 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,10 @@
 		CC64D7C322E1C7B9000F4004 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */; };
 		CC64D7C522E1C7C4000F4004 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C422E1C7C4000F4004 /* HomeScreenViewModel.swift */; };
 		CC64D7C822E1C8B8000F4004 /* CreditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C722E1C8B8000F4004 /* CreditInfo.swift */; };
+		CC64D7CC22E1D1C3000F4004 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CB22E1D1C3000F4004 /* UIView+Extensions.swift */; };
+		CC64D7CE22E1D1CF000F4004 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */; };
+		CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CF22E1E009000F4004 /* HTTP.swift */; };
+		CC64D7D222E1E114000F4004 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7D122E1E114000F4004 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 /* Begin PBXFileReference section */
 		CC64D79022E1C6D2000F4004 /* CreditScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC64D79322E1C6D2000F4004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC64D79522E1C6D2000F4004 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC64D79822E1C6D2000F4004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC64D79A22E1C6D3000F4004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC64D79D22E1C6D3000F4004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,10 @@
 		CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		CC64D7C422E1C7C4000F4004 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		CC64D7C722E1C8B8000F4004 /* CreditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditInfo.swift; sourceTree = "<group>"; };
+		CC64D7CB22E1D1C3000F4004 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
+		CC64D7CF22E1E009000F4004 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		CC64D7D122E1E114000F4004 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +109,11 @@
 		CC64D79222E1C6D2000F4004 /* CreditScore */ = {
 			isa = PBXGroup;
 			children = (
-				CC64D7C622E1C896000F4004 /* Models */,
 				CC64D7C122E1C7AC000F4004 /* Home */,
+				CC64D7C622E1C896000F4004 /* Models */,
+				CC64D7C922E1D124000F4004 /* API */,
+				CC64D7CA22E1D1B3000F4004 /* Extensions */,
 				CC64D79322E1C6D2000F4004 /* AppDelegate.swift */,
-				CC64D79522E1C6D2000F4004 /* ViewController.swift */,
 				CC64D79722E1C6D2000F4004 /* Main.storyboard */,
 				CC64D79A22E1C6D3000F4004 /* Assets.xcassets */,
 				CC64D79C22E1C6D3000F4004 /* LaunchScreen.storyboard */,
@@ -148,6 +155,24 @@
 				CC64D7C722E1C8B8000F4004 /* CreditInfo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CC64D7C922E1D124000F4004 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CC64D7CF22E1E009000F4004 /* HTTP.swift */,
+				CC64D7D122E1E114000F4004 /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CC64D7CA22E1D1B3000F4004 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC64D7CB22E1D1C3000F4004 /* UIView+Extensions.swift */,
+				CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,9 +306,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC64D79622E1C6D2000F4004 /* ViewController.swift in Sources */,
+				CC64D7D222E1E114000F4004 /* APIManager.swift in Sources */,
 				CC64D7C522E1C7C4000F4004 /* HomeScreenViewModel.swift in Sources */,
 				CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */,
+				CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */,
+				CC64D7CE22E1D1CF000F4004 /* URLSession+Extensions.swift in Sources */,
+				CC64D7CC22E1D1C3000F4004 /* UIView+Extensions.swift in Sources */,
 				CC64D7C322E1C7B9000F4004 /* HomeScreenViewController.swift in Sources */,
 				CC64D7C822E1C8B8000F4004 /* CreditInfo.swift in Sources */,
 			);
