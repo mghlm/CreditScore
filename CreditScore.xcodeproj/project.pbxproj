@@ -14,6 +14,9 @@
 		CC64D79E22E1C6D3000F4004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC64D79C22E1C6D3000F4004 /* LaunchScreen.storyboard */; };
 		CC64D7A922E1C6D3000F4004 /* CreditScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7A822E1C6D3000F4004 /* CreditScoreTests.swift */; };
 		CC64D7B422E1C6D3000F4004 /* CreditScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7B322E1C6D3000F4004 /* CreditScoreUITests.swift */; };
+		CC64D7C322E1C7B9000F4004 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */; };
+		CC64D7C522E1C7C4000F4004 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C422E1C7C4000F4004 /* HomeScreenViewModel.swift */; };
+		CC64D7C822E1C8B8000F4004 /* CreditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C722E1C8B8000F4004 /* CreditInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		CC64D7AF22E1C6D3000F4004 /* CreditScoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditScoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC64D7B322E1C6D3000F4004 /* CreditScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreUITests.swift; sourceTree = "<group>"; };
 		CC64D7B522E1C6D3000F4004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		CC64D7C422E1C7C4000F4004 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
+		CC64D7C722E1C8B8000F4004 /* CreditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 		CC64D79222E1C6D2000F4004 /* CreditScore */ = {
 			isa = PBXGroup;
 			children = (
+				CC64D7C622E1C896000F4004 /* Models */,
+				CC64D7C122E1C7AC000F4004 /* Home */,
 				CC64D79322E1C6D2000F4004 /* AppDelegate.swift */,
 				CC64D79522E1C6D2000F4004 /* ViewController.swift */,
 				CC64D79722E1C6D2000F4004 /* Main.storyboard */,
@@ -123,6 +131,23 @@
 				CC64D7B522E1C6D3000F4004 /* Info.plist */,
 			);
 			path = CreditScoreUITests;
+			sourceTree = "<group>";
+		};
+		CC64D7C122E1C7AC000F4004 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */,
+				CC64D7C422E1C7C4000F4004 /* HomeScreenViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CC64D7C622E1C896000F4004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC64D7C722E1C8B8000F4004 /* CreditInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +282,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC64D79622E1C6D2000F4004 /* ViewController.swift in Sources */,
+				CC64D7C522E1C7C4000F4004 /* HomeScreenViewModel.swift in Sources */,
 				CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */,
+				CC64D7C322E1C7B9000F4004 /* HomeScreenViewController.swift in Sources */,
+				CC64D7C822E1C8B8000F4004 /* CreditInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
