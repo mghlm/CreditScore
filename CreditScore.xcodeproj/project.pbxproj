@@ -20,6 +20,7 @@
 		CC64D7CE22E1D1CF000F4004 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */; };
 		CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CF22E1E009000F4004 /* HTTP.swift */; };
 		CC64D7D222E1E114000F4004 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7D122E1E114000F4004 /* APIService.swift */; };
+		CC64D7D922E20B70000F4004 /* CreditInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7D822E20B70000F4004 /* CreditInfoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		CC64D7CF22E1E009000F4004 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		CC64D7D122E1E114000F4004 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CC64D7D822E20B70000F4004 /* CreditInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditInfoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		CC64D79222E1C6D2000F4004 /* CreditScore */ = {
 			isa = PBXGroup;
 			children = (
+				CC64D7D722E20B60000F4004 /* Services */,
 				CC64D7C122E1C7AC000F4004 /* Home */,
 				CC64D7C622E1C896000F4004 /* Models */,
 				CC64D7C922E1D124000F4004 /* API */,
@@ -173,6 +176,14 @@
 				CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CC64D7D722E20B60000F4004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CC64D7D822E20B70000F4004 /* CreditInfoService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC64D7D222E1E114000F4004 /* APIService.swift in Sources */,
+				CC64D7D922E20B70000F4004 /* CreditInfoService.swift in Sources */,
 				CC64D7C522E1C7C4000F4004 /* HomeScreenViewModel.swift in Sources */,
 				CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */,
 				CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */,
