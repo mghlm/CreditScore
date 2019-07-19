@@ -8,18 +8,14 @@
 
 import Foundation
 
-enum API {
-    static func buildRequest(http: HTTP) -> URLRequest {
-        return URLRequest(url: http.url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: http.timeOut)
-    }
+protocol APIServiceType {
+    func perform<T: Codable>(_ type: T.Type, http: HTTP, completion: @escaping (Result<T, NetworkError>) -> Void)
 }
 
-protocol CreditInfoServiceType {
-    func perform<T: Codable>(_ type: T.Type, request: URLRequest, completion: @escaping (Result<T, NetworkError>) -> Void)
-}
-
-struct CreditInfoService: CreditInfoServiceType {
-    func perform<T: Codable>(_ type: T.Type, request: URLRequest, completion: @escaping (Result<T, NetworkError>) -> Void) {
+struct APIService: APIServiceType {
+    func perform<T: Codable>(_ type: T.Type, http: HTTP, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        
+        let request = URLRequest(url: http.url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: http.timeOut)
         
         URLSession.shared.dataTask(with: request) { (result) in
             switch result {

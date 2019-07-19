@@ -19,7 +19,7 @@
 		CC64D7CC22E1D1C3000F4004 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CB22E1D1C3000F4004 /* UIView+Extensions.swift */; };
 		CC64D7CE22E1D1CF000F4004 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */; };
 		CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CF22E1E009000F4004 /* HTTP.swift */; };
-		CC64D7D222E1E114000F4004 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7D122E1E114000F4004 /* APIManager.swift */; };
+		CC64D7D222E1E114000F4004 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7D122E1E114000F4004 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		CC64D7CB22E1D1C3000F4004 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		CC64D7CF22E1E009000F4004 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
-		CC64D7D122E1E114000F4004 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CC64D7D122E1E114000F4004 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CC64D7CF22E1E009000F4004 /* HTTP.swift */,
-				CC64D7D122E1E114000F4004 /* APIManager.swift */,
+				CC64D7D122E1E114000F4004 /* APIService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC64D7D222E1E114000F4004 /* APIManager.swift in Sources */,
+				CC64D7D222E1E114000F4004 /* APIService.swift in Sources */,
 				CC64D7C522E1C7C4000F4004 /* HomeScreenViewModel.swift in Sources */,
 				CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */,
 				CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */,

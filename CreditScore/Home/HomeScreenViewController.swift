@@ -13,14 +13,18 @@ final class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let creditInfoService: CreditInfoServiceType = CreditInfoService()
+        let apiService: APIServiceType = APIService()
         
-        creditInfoService.perform(CreditInfo.self, request: API.buildRequest(http: HTTP.creditInfo())) { [weak self] result in
+        apiService.perform(CreditInfo.self, http: HTTP.creditInfo()) { [weak self] result in
             switch result {
             case .success(let creditInfo):
-                print(creditInfo.accountIDVStatus)
+                DispatchQueue.main.async {
+                    print(creditInfo.accountIDVStatus)
+                }
             case .failure(let error):
-                print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    print(error.localizedDescription)
+                }
             }
         }
     }
