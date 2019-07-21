@@ -9,7 +9,18 @@
 import Foundation
 
 protocol HomeScreenViewModelType {
-    func getCreditInfo(completion: @escaping (Result<CreditReportInfo, NetworkError>) -> Void)
+    
+    /// Gets the decoded credit info object
+    ///
+    /// - Parameter completion: completes with either credit report info object or network error
+    func didLoad(completion: @escaping (Result<Void, NetworkError>) -> Void)
+    
+    /// The user's credit score
+    var score: String? { get }
+    
+    /// The max credit score
+    var maxScore: String? { get }
+    
 }
 
 final class HomeScreenViewModel: HomeScreenViewModelType {
@@ -17,6 +28,8 @@ final class HomeScreenViewModel: HomeScreenViewModelType {
     // MARK: - Dependenices
     
     private var apiService: APIServiceType!
+    var score: String?
+    var maxScore: String?
     
     // MARK: - Private properties
     
@@ -30,27 +43,14 @@ final class HomeScreenViewModel: HomeScreenViewModelType {
     
     // MARK: - Public methods
     
-//    func getCreditInfo() {
-//        apiService.perform(CreditInfo.self, http: HTTP.creditInfo()) { [weak self] result in
-//            switch result {
-//            case .success(let creditInfo):
-//                DispatchQueue.main.async {
-//                    self?.creditReportInfo = creditInfo.creditReportInfo
-//                }
-//            case .failure(let error):
-//                DispatchQueue.main.async {
-//                    completion(.failure(error))
-//                }
-//            }
-//        }
-//    }
-    
-    func getCreditInfo(completion: @escaping (Result<CreditReportInfo, NetworkError>) -> Void) {
-        apiService.perform(CreditInfo.self, http: HTTP.creditInfo()) { (result) in
+    func didLoad(completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        apiService.perform(CreditInfo.self, endpoint: Endpoint.creditInfo()) { [weak self] result in
             switch result {
             case .success(let creditInfo):
                 DispatchQueue.main.async {
-                    completion(.success(creditInfo.creditReportInfo))
+                    self?.score = "\(creditInfo.creditReportInfo.score)"
+                    self?.maxScore = "\(creditInfo.creditReportInfo.maxScoreValue)"
+                    completion(.success(()))
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -60,3 +60,5 @@ final class HomeScreenViewModel: HomeScreenViewModelType {
         }
     }
 }
+
+

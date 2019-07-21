@@ -14,11 +14,9 @@ final class HomeScreenViewController: UIViewController {
     
     private var viewModel: HomeScreenViewModelType!
     
-    // MARK: - Private properties
+    // MARK: - Private propreties
     
-    private var creditInfo: CreditReportInfo!
-    
-    lazy var creditScoreLabel: UILabel = {
+    lazy private var creditScoreLabel: UILabel = {
         let lbl = UILabel()
         return lbl
     }()
@@ -27,7 +25,15 @@ final class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCreditInfo()
+        view.backgroundColor = .white 
+        viewModel.didLoad { [weak self] result in
+            switch result {
+            case .success:
+                self?.setupUI()
+            case .failure(let error):
+                self?.showErrorAlert(for: error)
+            }
+        }
     }
     
     // MARK: - Init
@@ -46,22 +52,14 @@ final class HomeScreenViewController: UIViewController {
     // MARK: - Private methods
     
     private func setupUI() {
-        view.backgroundColor = .white 
         view.addSubview(creditScoreLabel)
         setupCreditScoreLabel()
-        
         setupConstraints()
     }
     
-    private func fetchCreditInfo() {
-        viewModel.getCreditInfo { (result) in
-            switch result {
-            case .success(let creditInfo):
-                self.creditInfo = creditInfo
-                self.setupUI()
-            case .failure(let error):
-                self.showErrorAlert(for: error)
-            }
+    private func setupCreditScoreLabel() {
+        if let score = viewModel.score, let maxScore = viewModel.maxScore {
+            creditScoreLabel.text = "Your score is: \(score) out of \(maxScore)"
         }
     }
     
@@ -77,13 +75,8 @@ final class HomeScreenViewController: UIViewController {
         case .invalidStatusCode:
             errorText = "Bad status code"
         }
-        
         let alert = UIAlertController(title: "Error", message: errorText, preferredStyle: .alert)
         present(alert, animated: true)
-    }
-    
-    private func setupCreditScoreLabel() {
-        creditScoreLabel.text = "Your score is: \(creditInfo.score) out of \(creditInfo.maxScoreValue)"
     }
     
     private func setupConstraints() {

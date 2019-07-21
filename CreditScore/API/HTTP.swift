@@ -12,32 +12,23 @@ enum HTTPMethod: String {
     case GET = "GET"
 }
 
-// MARK: - HTTP
-
-struct HTTP {
+struct Endpoint {
     let path: String
     let method: HTTPMethod
     let timeOut: Double = 30
+    
+    // makeUrl
+    func makeUrl(with baseUrl: URL) -> URL {
+        let url = baseUrl.appendingPathComponent(path)
+        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+        return components.url!
+    }
 }
 
 // MARK: - Extensions
 
-// Endpoints
-extension HTTP {
-    static func creditInfo() -> HTTP {
-        return HTTP(path: "/values", method: .GET)
-    }
-}
-
-// QUESTION: WHY CAN WE UNWRAP HERE??
-
-// Url
-extension HTTP {
-    var url: URL {
-        let baseUrl = URL(string: "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit")!
-        let urlWithPath = baseUrl.appendingPathComponent(path)
-        let components = URLComponents(url: urlWithPath, resolvingAgainstBaseURL: false)!
-        
-        return components.url!
+extension Endpoint {
+    static func creditInfo() -> Endpoint {
+        return Endpoint(path: "/values", method: .GET)
     }
 }

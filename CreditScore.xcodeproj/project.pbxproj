@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D79322E1C6D2000F4004 /* AppDelegate.swift */; };
-		CC64D79922E1C6D2000F4004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC64D79722E1C6D2000F4004 /* Main.storyboard */; };
-		CC64D79B22E1C6D3000F4004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC64D79A22E1C6D3000F4004 /* Assets.xcassets */; };
-		CC64D79E22E1C6D3000F4004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC64D79C22E1C6D3000F4004 /* LaunchScreen.storyboard */; };
-		CC64D7A922E1C6D3000F4004 /* CreditScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7A822E1C6D3000F4004 /* CreditScoreTests.swift */; };
 		CC64D7B422E1C6D3000F4004 /* CreditScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7B322E1C6D3000F4004 /* CreditScoreUITests.swift */; };
 		CC64D7C322E1C7B9000F4004 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */; };
 		CC64D7C522E1C7C4000F4004 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C422E1C7C4000F4004 /* HomeScreenViewModel.swift */; };
@@ -20,7 +16,12 @@
 		CC64D7CE22E1D1CF000F4004 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */; };
 		CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7CF22E1E009000F4004 /* HTTP.swift */; };
 		CC64D7D222E1E114000F4004 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7D122E1E114000F4004 /* APIService.swift */; };
-		CC64D7D922E20B70000F4004 /* CreditInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7D822E20B70000F4004 /* CreditInfoService.swift */; };
+		CC64D7DD22E21BDC000F4004 /* credit_info.json in Resources */ = {isa = PBXBuildFile; fileRef = CC64D7DC22E21BDC000F4004 /* credit_info.json */; };
+		CC64D7DF22E21BF6000F4004 /* credit_report_info.json in Resources */ = {isa = PBXBuildFile; fileRef = CC64D7DE22E21BF6000F4004 /* credit_report_info.json */; };
+		CC64D7E522E21EE4000F4004 /* APIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7E422E21EE4000F4004 /* APIServiceMock.swift */; };
+		CCF14B8E22E36100004FABF8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF14B8D22E36100004FABF8 /* Launch Screen.storyboard */; };
+		CCF14B9622E396F2004FABF8 /* HomeScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTests.swift */; };
+		CCF14B9822E48EAB004FABF8 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF14B9722E48EAB004FABF8 /* Transformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +45,8 @@
 		CC64D79022E1C6D2000F4004 /* CreditScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC64D79322E1C6D2000F4004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC64D79822E1C6D2000F4004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CC64D79A22E1C6D3000F4004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC64D79D22E1C6D3000F4004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC64D79F22E1C6D3000F4004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC64D7A422E1C6D3000F4004 /* CreditScoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditScoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC64D7A822E1C6D3000F4004 /* CreditScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreTests.swift; sourceTree = "<group>"; };
 		CC64D7AA22E1C6D3000F4004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC64D7AF22E1C6D3000F4004 /* CreditScoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditScoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC64D7B322E1C6D3000F4004 /* CreditScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreUITests.swift; sourceTree = "<group>"; };
@@ -60,7 +58,12 @@
 		CC64D7CD22E1D1CF000F4004 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		CC64D7CF22E1E009000F4004 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		CC64D7D122E1E114000F4004 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		CC64D7D822E20B70000F4004 /* CreditInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditInfoService.swift; sourceTree = "<group>"; };
+		CC64D7DC22E21BDC000F4004 /* credit_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = credit_info.json; sourceTree = "<group>"; };
+		CC64D7DE22E21BF6000F4004 /* credit_report_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = credit_report_info.json; sourceTree = "<group>"; };
+		CC64D7E422E21EE4000F4004 /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
+		CCF14B8D22E36100004FABF8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTests.swift; sourceTree = "<group>"; };
+		CCF14B9722E48EAB004FABF8 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,16 +114,11 @@
 		CC64D79222E1C6D2000F4004 /* CreditScore */ = {
 			isa = PBXGroup;
 			children = (
-				CC64D7D722E20B60000F4004 /* Services */,
-				CC64D7C122E1C7AC000F4004 /* Home */,
+				CC64D7DB22E21AF4000F4004 /* Views */,
 				CC64D7C622E1C896000F4004 /* Models */,
 				CC64D7C922E1D124000F4004 /* API */,
 				CC64D7CA22E1D1B3000F4004 /* Extensions */,
-				CC64D79322E1C6D2000F4004 /* AppDelegate.swift */,
-				CC64D79722E1C6D2000F4004 /* Main.storyboard */,
-				CC64D79A22E1C6D3000F4004 /* Assets.xcassets */,
-				CC64D79C22E1C6D3000F4004 /* LaunchScreen.storyboard */,
-				CC64D79F22E1C6D3000F4004 /* Info.plist */,
+				CC64D7DA22E21ACF000F4004 /* Resources */,
 			);
 			path = CreditScore;
 			sourceTree = "<group>";
@@ -128,8 +126,10 @@
 		CC64D7A722E1C6D3000F4004 /* CreditScoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				CC64D7A822E1C6D3000F4004 /* CreditScoreTests.swift */,
+				CC64D7E322E21C4C000F4004 /* Mocks */,
+				CC64D7E222E21C40000F4004 /* json */,
 				CC64D7AA22E1C6D3000F4004 /* Info.plist */,
+				CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTests.swift */,
 			);
 			path = CreditScoreTests;
 			sourceTree = "<group>";
@@ -165,6 +165,7 @@
 			children = (
 				CC64D7CF22E1E009000F4004 /* HTTP.swift */,
 				CC64D7D122E1E114000F4004 /* APIService.swift */,
+				CCF14B9722E48EAB004FABF8 /* Transformer.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -178,12 +179,40 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CC64D7D722E20B60000F4004 /* Services */ = {
+		CC64D7DA22E21ACF000F4004 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CC64D7D822E20B70000F4004 /* CreditInfoService.swift */,
+				CC64D79322E1C6D2000F4004 /* AppDelegate.swift */,
+				CCF14B8D22E36100004FABF8 /* Launch Screen.storyboard */,
+				CC64D79722E1C6D2000F4004 /* Main.storyboard */,
+				CC64D79F22E1C6D3000F4004 /* Info.plist */,
 			);
-			path = Services;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC64D7DB22E21AF4000F4004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC64D7C122E1C7AC000F4004 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC64D7E222E21C40000F4004 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				CC64D7DC22E21BDC000F4004 /* credit_info.json */,
+				CC64D7DE22E21BF6000F4004 /* credit_report_info.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		CC64D7E322E21C4C000F4004 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CC64D7E422E21EE4000F4004 /* APIServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,9 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC64D79E22E1C6D3000F4004 /* LaunchScreen.storyboard in Resources */,
-				CC64D79B22E1C6D3000F4004 /* Assets.xcassets in Resources */,
-				CC64D79922E1C6D2000F4004 /* Main.storyboard in Resources */,
+				CCF14B8E22E36100004FABF8 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +327,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC64D7DF22E21BF6000F4004 /* credit_report_info.json in Resources */,
+				CC64D7DD22E21BDC000F4004 /* credit_info.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC64D7D222E1E114000F4004 /* APIService.swift in Sources */,
-				CC64D7D922E20B70000F4004 /* CreditInfoService.swift in Sources */,
+				CCF14B9822E48EAB004FABF8 /* Transformer.swift in Sources */,
 				CC64D7C522E1C7C4000F4004 /* HomeScreenViewModel.swift in Sources */,
 				CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */,
 				CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */,
@@ -333,7 +362,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC64D7A922E1C6D3000F4004 /* CreditScoreTests.swift in Sources */,
+				CC64D7E522E21EE4000F4004 /* APIServiceMock.swift in Sources */,
+				CCF14B9622E396F2004FABF8 /* HomeScreenViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,14 +397,6 @@
 				CC64D79822E1C6D2000F4004 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CC64D79C22E1C6D3000F4004 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC64D79D22E1C6D3000F4004 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -431,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -486,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -500,9 +522,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF28856VV6;
-				INFOPLIST_FILE = CreditScore/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CreditScoreUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,7 +533,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnusholm.CreditScore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -518,9 +541,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF28856VV6;
-				INFOPLIST_FILE = CreditScore/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CreditScoreUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,7 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnusholm.CreditScore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -9,15 +9,25 @@
 import Foundation
 
 protocol APIServiceType {
-    func perform<T: Codable>(_ type: T.Type, http: HTTP, completion: @escaping (Result<T, NetworkError>) -> Void)
+    func perform<T: Codable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void)
 }
 
-struct APIService: APIServiceType {
-    func perform<T: Codable>(_ type: T.Type, http: HTTP, completion: @escaping (Result<T, NetworkError>) -> Void) {
+final class APIService: APIServiceType {
+    
+    private let baseUrl = URL(string: "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit")!
+    private let session: URLSession
+    private let transformer: Transformer
+    
+    init(session: URLSession = URLSession.shared, transformer: Transformer = JSONTransformer()) {
+        self.session = session
+        self.transformer = transformer
+    }
+    
+    func perform<T: Codable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void) {
         
-        let request = URLRequest(url: http.url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: http.timeOut)
+        let request = URLRequest(url: endpoint.makeUrl(with: baseUrl), cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: endpoint.timeOut)
         
-        URLSession.shared.dataTask(with: request) { (result) in
+        session.dataTask(with: request) { (result) in
             switch result {
             case .success(let response, let data):
                 guard let statusCode = (response as? HTTPURLResponse)?.statusCode, 200..<299 ~= statusCode else {
@@ -25,7 +35,7 @@ struct APIService: APIServiceType {
                     return
                 }
                 do {
-                    let values = try JSONDecoder().decode(T.self, from: data)
+                    let values = try self.transformer.decode(T.self, from: data)
                     completion(.success(values))
                 } catch {
                     completion(.failure(.decodeError))
