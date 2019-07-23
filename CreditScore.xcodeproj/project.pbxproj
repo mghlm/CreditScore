@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC64A1BE22E7B1DC00E8A7AC /* CreditInfoResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64A1BD22E7B1DC00E8A7AC /* CreditInfoResponseTest.swift */; };
+		CC64A1C022E7B37E00E8A7AC /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64A1BF22E7B37E00E8A7AC /* DataReader.swift */; };
+		CC64A1C422E7B6B200E8A7AC /* EndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64A1C322E7B6B200E8A7AC /* EndpointTest.swift */; };
 		CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D79322E1C6D2000F4004 /* AppDelegate.swift */; };
 		CC64D7B422E1C6D3000F4004 /* CreditScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7B322E1C6D3000F4004 /* CreditScoreUITests.swift */; };
 		CC64D7C322E1C7B9000F4004 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */; };
@@ -21,7 +24,7 @@
 		CC64D7E522E21EE4000F4004 /* APIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7E422E21EE4000F4004 /* APIServiceMock.swift */; };
 		CC74AE9022E6F1DE0089B60C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74AE8F22E6F1DE0089B60C /* CircleView.swift */; };
 		CCF14B8E22E36100004FABF8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF14B8D22E36100004FABF8 /* Launch Screen.storyboard */; };
-		CCF14B9622E396F2004FABF8 /* HomeScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTests.swift */; };
+		CCF14B9622E396F2004FABF8 /* HomeScreenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTest.swift */; };
 		CCF14B9822E48EAB004FABF8 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF14B9722E48EAB004FABF8 /* Transformer.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC64A1BD22E7B1DC00E8A7AC /* CreditInfoResponseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditInfoResponseTest.swift; sourceTree = "<group>"; };
+		CC64A1BF22E7B37E00E8A7AC /* DataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReader.swift; sourceTree = "<group>"; };
+		CC64A1C322E7B6B200E8A7AC /* EndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTest.swift; sourceTree = "<group>"; };
 		CC64D79022E1C6D2000F4004 /* CreditScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC64D79322E1C6D2000F4004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC64D79822E1C6D2000F4004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +70,7 @@
 		CC64D7E422E21EE4000F4004 /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
 		CC74AE8F22E6F1DE0089B60C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		CCF14B8D22E36100004FABF8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTests.swift; sourceTree = "<group>"; };
+		CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTest.swift; sourceTree = "<group>"; };
 		CCF14B9722E48EAB004FABF8 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +99,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC64A1C522E7B7FF00E8A7AC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTest.swift */,
+				CC64A1BD22E7B1DC00E8A7AC /* CreditInfoResponseTest.swift */,
+				CC64A1C322E7B6B200E8A7AC /* EndpointTest.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		CC64D78722E1C6D2000F4004 = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +144,11 @@
 		CC64D7A722E1C6D3000F4004 /* CreditScoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				CC64A1C522E7B7FF00E8A7AC /* Tests */,
 				CC64D7E322E21C4C000F4004 /* Mocks */,
-				CC64D7E222E21C40000F4004 /* json */,
+				CC64D7E222E21C40000F4004 /* JSON */,
 				CC64D7AA22E1C6D3000F4004 /* Info.plist */,
-				CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTests.swift */,
+				CC64A1BF22E7B37E00E8A7AC /* DataReader.swift */,
 			);
 			path = CreditScoreTests;
 			sourceTree = "<group>";
@@ -201,13 +218,13 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		CC64D7E222E21C40000F4004 /* json */ = {
+		CC64D7E222E21C40000F4004 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
 				CC64D7DC22E21BDC000F4004 /* credit_info.json */,
 				CC64D7DE22E21BF6000F4004 /* credit_report_info.json */,
 			);
-			path = json;
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		CC64D7E322E21C4C000F4004 /* Mocks */ = {
@@ -374,8 +391,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC64A1C022E7B37E00E8A7AC /* DataReader.swift in Sources */,
+				CC64A1BE22E7B1DC00E8A7AC /* CreditInfoResponseTest.swift in Sources */,
+				CC64A1C422E7B6B200E8A7AC /* EndpointTest.swift in Sources */,
 				CC64D7E522E21EE4000F4004 /* APIServiceMock.swift in Sources */,
-				CCF14B9622E396F2004FABF8 /* HomeScreenViewModelTests.swift in Sources */,
+				CCF14B9622E396F2004FABF8 /* HomeScreenViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
