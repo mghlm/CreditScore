@@ -1,5 +1,5 @@
 //
-//  HTTP.swift
+//  Endpoint.swift
 //  CreditScore
 //
 //  Created by Magnus Holm on 19/07/2019.

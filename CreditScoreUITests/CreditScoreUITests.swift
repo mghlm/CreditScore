@@ -29,7 +29,7 @@ class CreditScoreUITests: XCTestCase {
         
         XCTAssertTrue(mainLabel.exists)
         XCTAssertTrue(maxValueLabel.exists)
-        XCTAssertTrue(circularProgressView.exists)  
+        XCTAssertTrue(circularProgressView.exists)
     }
     
     func testCircularProgressViewExist() {

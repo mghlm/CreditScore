@@ -9,6 +9,13 @@
 import Foundation
 
 protocol APIServiceType {
+    
+    /// Creates a request and makes a networking call based on passed Endpoint
+    ///
+    /// - Parameters:
+    ///   - type: Any codable type to be parsed
+    ///   - endpoint: The endpoint including information about the request
+    ///   - completion: completes with either the specified type or network error 
     func perform<T: Codable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void)
 }
 
