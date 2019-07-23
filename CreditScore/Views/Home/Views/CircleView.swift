@@ -70,6 +70,7 @@ final class CircleView: UIView {
         setupCircularPath()
         setupTrackLayer()
         setupShapeLayer()
+        setupAccessibility()
     }
     
     private func setupLabel() {
@@ -102,6 +103,10 @@ final class CircleView: UIView {
         shapeLayer.lineCap = .round
         shapeLayer.fillColor = UIColor.clear.cgColor
         layer.addSublayer(shapeLayer)
+    }
+    
+    private func setupAccessibility() {
+        scoreLabel.accessibilityIdentifier = "scoreLabelIdentifier"
     }
     
     private func calculateEndValue(value: Double, maxValue: Double) -> CGFloat {

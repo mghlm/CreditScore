@@ -75,11 +75,19 @@ final class HomeScreenViewController: UIViewController {
         [mainLabel, circularProgressView, maxValueLabel].forEach { view.addSubview($0) }
         setupCreditScoreLabel()
         setupConstraints()
+        setupAccessibility()
     }
     
     private func setupCreditScoreLabel() {
         guard let maxScore = viewModel.maxScore else { return }
         maxValueLabel.text = "of \(maxScore)"
+    }
+    
+    private func setupAccessibility() {
+        mainLabel.accessibilityIdentifier = "mainLabelIdentifier"
+        maxValueLabel.accessibilityIdentifier = "maxValueLabelIdentifier"
+        circularProgressView.isAccessibilityElement = true
+        circularProgressView.accessibilityIdentifier = "circularProgressViewIdentifier"
     }
     
     private func showErrorAlert(for error: NetworkError) {
