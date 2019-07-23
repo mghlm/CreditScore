@@ -16,22 +16,33 @@ final class HomeScreenViewController: UIViewController {
     
     // MARK: - Private propreties
     
+    lazy var mainLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Your credit score:"
+        lbl.font = UIFont.boldSystemFont(ofSize: 32)
+        lbl.textAlignment = .center
+        
+        return lbl
+    }()
+    
+    lazy var maxValueLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.font = UIFont.boldSystemFont(ofSize: 32)
+        lbl.textAlignment = .center
+        
+        return lbl
+    }()
+    
     lazy var circularProgressView: CircleView = {
-        let cv = CircleView(frame: .zero, startText: "Tap me")
+        let cv = CircleView(frame: .zero, startText: "Tap")
         cv.center = view.center
         
         return cv
     }()
     
-    lazy private var creditScoreLabel: UILabel = {
-        let lbl = UILabel()
-        return lbl
-    }()
-    
     // MARK: - UIViewController
     
     override func viewDidLoad() {
-        creditScoreLabel.isHidden = true 
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animateCircularView)))
@@ -61,16 +72,14 @@ final class HomeScreenViewController: UIViewController {
     // MARK: - Private methods
     
     private func setupUI() {
-        view.addSubview(creditScoreLabel)
-        view.addSubview(circularProgressView)
+        [mainLabel, circularProgressView, maxValueLabel].forEach { view.addSubview($0) }
         setupCreditScoreLabel()
         setupConstraints()
     }
     
     private func setupCreditScoreLabel() {
-        if let score = viewModel.score, let maxScore = viewModel.maxScore {
-            creditScoreLabel.text = "Your score is: \(score) out of \(maxScore)"
-        }
+        guard let maxScore = viewModel.maxScore else { return }
+        maxValueLabel.text = "of \(maxScore)"
     }
     
     private func showErrorAlert(for error: NetworkError) {
@@ -90,7 +99,8 @@ final class HomeScreenViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        creditScoreLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        mainLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 150, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        maxValueLabel.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 150, paddingRight: 0, width: 0, height: 0)
     }
     
     // Handlers

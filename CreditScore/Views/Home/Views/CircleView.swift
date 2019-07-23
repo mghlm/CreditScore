@@ -20,7 +20,7 @@ final class CircleView: UIView {
     private var scoreLabel: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .center 
-        lbl.font = UIFont.boldSystemFont(ofSize: 32)
+        lbl.font = UIFont.boldSystemFont(ofSize: 26)
         return lbl
     }()
     
@@ -86,7 +86,7 @@ final class CircleView: UIView {
     private func setupTrackLayer() {
         trackLayer = CAShapeLayer()
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.strokeColor = UIColor(red: 255/255, green: 216/255, blue: 168/255, alpha: 1).cgColor
         trackLayer.lineWidth = 20
         trackLayer.strokeEnd = 1
         trackLayer.fillColor = UIColor.clear.cgColor
@@ -96,7 +96,7 @@ final class CircleView: UIView {
     private func setupShapeLayer() {
         shapeLayer = CAShapeLayer()
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.strokeColor = UIColor(red: 255/255, green: 167/255, blue: 59/255, alpha: 1).cgColor
         shapeLayer.lineWidth = 20
         shapeLayer.strokeEnd = 0
         shapeLayer.lineCap = .round
