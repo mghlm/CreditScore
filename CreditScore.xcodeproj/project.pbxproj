@@ -19,6 +19,7 @@
 		CC64D7DD22E21BDC000F4004 /* credit_info.json in Resources */ = {isa = PBXBuildFile; fileRef = CC64D7DC22E21BDC000F4004 /* credit_info.json */; };
 		CC64D7DF22E21BF6000F4004 /* credit_report_info.json in Resources */ = {isa = PBXBuildFile; fileRef = CC64D7DE22E21BF6000F4004 /* credit_report_info.json */; };
 		CC64D7E522E21EE4000F4004 /* APIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7E422E21EE4000F4004 /* APIServiceMock.swift */; };
+		CC74AE9022E6F1DE0089B60C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74AE8F22E6F1DE0089B60C /* CircleView.swift */; };
 		CCF14B8E22E36100004FABF8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF14B8D22E36100004FABF8 /* Launch Screen.storyboard */; };
 		CCF14B9622E396F2004FABF8 /* HomeScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTests.swift */; };
 		CCF14B9822E48EAB004FABF8 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF14B9722E48EAB004FABF8 /* Transformer.swift */; };
@@ -61,6 +62,7 @@
 		CC64D7DC22E21BDC000F4004 /* credit_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = credit_info.json; sourceTree = "<group>"; };
 		CC64D7DE22E21BF6000F4004 /* credit_report_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = credit_report_info.json; sourceTree = "<group>"; };
 		CC64D7E422E21EE4000F4004 /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
+		CC74AE8F22E6F1DE0089B60C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		CCF14B8D22E36100004FABF8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CCF14B9522E396F2004FABF8 /* HomeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTests.swift; sourceTree = "<group>"; };
 		CCF14B9722E48EAB004FABF8 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		CC64D7C122E1C7AC000F4004 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CCF14B9922E493F9004FABF8 /* Views */,
 				CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */,
 				CC64D7C422E1C7C4000F4004 /* HomeScreenViewModel.swift */,
 			);
@@ -213,6 +216,14 @@
 				CC64D7E422E21EE4000F4004 /* APIServiceMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CCF14B9922E493F9004FABF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC74AE8F22E6F1DE0089B60C /* CircleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 				CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */,
 				CC64D7D022E1E009000F4004 /* HTTP.swift in Sources */,
 				CC64D7CE22E1D1CF000F4004 /* URLSession+Extensions.swift in Sources */,
+				CC74AE9022E6F1DE0089B60C /* CircleView.swift in Sources */,
 				CC64D7CC22E1D1C3000F4004 /* UIView+Extensions.swift in Sources */,
 				CC64D7C322E1C7B9000F4004 /* HomeScreenViewController.swift in Sources */,
 				CC64D7C822E1C8B8000F4004 /* CreditInfo.swift in Sources */,

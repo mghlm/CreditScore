@@ -16,6 +16,13 @@ final class HomeScreenViewController: UIViewController {
     
     // MARK: - Private propreties
     
+    lazy var circularProgressView: CircleView = {
+        let cv = CircleView(frame: .zero, startText: "Tap me")
+        cv.center = view.center
+        
+        return cv
+    }()
+    
     lazy private var creditScoreLabel: UILabel = {
         let lbl = UILabel()
         return lbl
@@ -24,8 +31,10 @@ final class HomeScreenViewController: UIViewController {
     // MARK: - UIViewController
     
     override func viewDidLoad() {
+        creditScoreLabel.isHidden = true 
         super.viewDidLoad()
-        view.backgroundColor = .white 
+        view.backgroundColor = .white
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animateCircularView)))
         viewModel.didLoad { [weak self] result in
             switch result {
             case .success:
@@ -53,6 +62,7 @@ final class HomeScreenViewController: UIViewController {
     
     private func setupUI() {
         view.addSubview(creditScoreLabel)
+        view.addSubview(circularProgressView)
         setupCreditScoreLabel()
         setupConstraints()
     }
@@ -81,5 +91,16 @@ final class HomeScreenViewController: UIViewController {
     
     private func setupConstraints() {
         creditScoreLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+    }
+    
+    // Handlers
+    
+    @objc private func animateCircularView() {
+        guard let score = viewModel.score,
+              let scoreDouble = Double(score),
+              let maxScore = viewModel.maxScore,
+              let maxScoreDouble = Double(maxScore) else { return }
+        
+        circularProgressView.animate(toValue: scoreDouble, maxValue: maxScoreDouble, duration: 1)
     }
 }
