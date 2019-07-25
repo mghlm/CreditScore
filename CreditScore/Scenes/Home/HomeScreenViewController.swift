@@ -61,9 +61,9 @@ class HomeScreenViewController: UIViewController {
         didLoadData()
     }
     
-    // MARK: - Public methods
+    // MARK: - Private methods
     
-    func didLoadData() {
+    private func didLoadData() {
         viewModel.didLoad { [weak self] result in
             switch result {
             case .success:
@@ -74,14 +74,14 @@ class HomeScreenViewController: UIViewController {
         }
     }
     
-    func updateUI() {
+    private func updateUI() {
         [mainLabel, circularProgressView, maxValueLabel].forEach { view.addSubview($0) }
         setupMaxScoreLabel()
         setupConstraints()
         setupAccessibility()
     }
     
-    func showErrorAlert(for error: NetworkError) {
+    private func showErrorAlert(for error: NetworkError) {
         var errorText = ""
         switch error {
         case .apiError:
@@ -96,8 +96,6 @@ class HomeScreenViewController: UIViewController {
         let alert = UIAlertController(title: "Error", message: errorText, preferredStyle: .alert)
         present(alert, animated: true)
     }
-    
-    // MARK: - Private methods 
     
     private func setupMaxScoreLabel() {
         guard let maxScore = viewModel.maxScore else { return }
