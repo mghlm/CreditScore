@@ -52,7 +52,7 @@ Please clone the repo, clean the project in Xcode and run the project. No need t
 
 
 
-![alt text](https://i.imgur.com/J7ssz8Z.png)
+![alt text](https://i.imgur.com/DKxsQq1.png)
 
 
 
