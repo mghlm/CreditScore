@@ -10,7 +10,7 @@ import Foundation
 
 protocol  Transformer {
     
-    /// Decodes any decotable type
+    /// Decodes any decodable type
     ///
     /// - Parameters:
     ///   - type: Any type that conforms to the decodable protocol

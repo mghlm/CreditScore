@@ -17,7 +17,7 @@ final class CircleView: UIView {
     private var circularPath: UIBezierPath!
     private var startText: String?
     
-    private var scoreLabel: UILabel = {
+    private var startLabel: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .center 
         lbl.font = UIFont.boldSystemFont(ofSize: 26)
@@ -50,14 +50,14 @@ final class CircleView: UIView {
         shapeLayer.add(basicAnimation, forKey: "strokeAnimation")
         
         var currentTime:Double = duration
-        scoreLabel.font = UIFont.boldSystemFont(ofSize: 64)
+        startLabel.font = UIFont.boldSystemFont(ofSize: 64)
         let timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (timer) in
             if currentTime >= 2{
                 timer.invalidate()
             } else {
                 currentTime += 0.01
                 let percent = currentTime/2
-                self.scoreLabel.text = "\(Int(toValue * percent))"
+                self.startLabel.text = "\(Int(toValue * percent))"
             }
         }
         timer.fire()
@@ -74,10 +74,10 @@ final class CircleView: UIView {
     }
     
     private func setupLabel() {
-        addSubview(scoreLabel)
-        scoreLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
-        scoreLabel.center = center
-        scoreLabel.text = startText ?? ""
+        addSubview(startLabel)
+        startLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
+        startLabel.center = center
+        startLabel.text = startText ?? ""
     }
     
     private func setupCircularPath() {
@@ -106,7 +106,7 @@ final class CircleView: UIView {
     }
     
     private func setupAccessibility() {
-        scoreLabel.accessibilityIdentifier = "scoreLabelIdentifier"
+        startLabel.accessibilityIdentifier = "scoreLabelIdentifier"
     }
     
     private func calculateEndValue(value: Double, maxValue: Double) -> CGFloat {

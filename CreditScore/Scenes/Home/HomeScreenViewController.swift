@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController {
     
     // MARK: - Dependencies
     
@@ -40,28 +40,11 @@ final class HomeScreenViewController: UIViewController {
         return cv
     }()
     
-    // MARK: - UIViewController
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animateCircularView)))
-        viewModel.didLoad { [weak self] result in
-            switch result {
-            case .success:
-                self?.setupUI()
-            case .failure(let error):
-                self?.showErrorAlert(for: error)
-            }
-        }
-    }
-    
     // MARK: - Init
     
     init(viewModel: HomeScreenViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,28 +52,36 @@ final class HomeScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Private methods
+    // MARK: - UIViewController
     
-    private func setupUI() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animateCircularView)))
+        didLoadData()
+    }
+    
+    // MARK: - Public methods
+    
+    func didLoadData() {
+        viewModel.didLoad { [weak self] result in
+            switch result {
+            case .success:
+                self?.updateUI()
+            case .failure(let error):
+                self?.showErrorAlert(for: error)
+            }
+        }
+    }
+    
+    func updateUI() {
         [mainLabel, circularProgressView, maxValueLabel].forEach { view.addSubview($0) }
-        setupCreditScoreLabel()
+        setupMaxScoreLabel()
         setupConstraints()
         setupAccessibility()
     }
     
-    private func setupCreditScoreLabel() {
-        guard let maxScore = viewModel.maxScore else { return }
-        maxValueLabel.text = "of \(maxScore)"
-    }
-    
-    private func setupAccessibility() {
-        mainLabel.accessibilityIdentifier = "mainLabelIdentifier"
-        maxValueLabel.accessibilityIdentifier = "maxValueLabelIdentifier"
-        circularProgressView.isAccessibilityElement = true
-        circularProgressView.accessibilityIdentifier = "circularProgressViewIdentifier"
-    }
-    
-    private func showErrorAlert(for error: NetworkError) {
+    func showErrorAlert(for error: NetworkError) {
         var errorText = ""
         switch error {
         case .apiError:
@@ -104,6 +95,20 @@ final class HomeScreenViewController: UIViewController {
         }
         let alert = UIAlertController(title: "Error", message: errorText, preferredStyle: .alert)
         present(alert, animated: true)
+    }
+    
+    // MARK: - Private methods 
+    
+    private func setupMaxScoreLabel() {
+        guard let maxScore = viewModel.maxScore else { return }
+        maxValueLabel.text = "of \(maxScore)"
+    }
+    
+    private func setupAccessibility() {
+        mainLabel.accessibilityIdentifier = "mainLabelIdentifier"
+        maxValueLabel.accessibilityIdentifier = "maxValueLabelIdentifier"
+        circularProgressView.isAccessibilityElement = true
+        circularProgressView.accessibilityIdentifier = "circularProgressViewIdentifier"
     }
     
     private func setupConstraints() {

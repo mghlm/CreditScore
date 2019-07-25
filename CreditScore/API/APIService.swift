@@ -16,7 +16,7 @@ protocol APIServiceType {
     ///   - type: Any codable type to be parsed
     ///   - endpoint: The endpoint including information about the request
     ///   - completion: completes with either the specified type or network error 
-    func perform<T: Codable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void)
+    func perform<T: Decodable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void)
 }
 
 final class APIService: APIServiceType {
@@ -30,9 +30,9 @@ final class APIService: APIServiceType {
         self.transformer = transformer
     }
     
-    func perform<T: Codable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    func perform<T: Decodable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void) {
         
-        let request = URLRequest(url: endpoint.makeUrl(with: baseUrl), cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: endpoint.timeOut)
+        let request = URLRequest(url: endpoint.makeUrl(with: baseUrl), cachePolicy: .reloadIgnoringLocalCacheData)
         
         session.dataTask(with: request) { (result) in
             switch result {

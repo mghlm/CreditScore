@@ -27,13 +27,9 @@ final class HomeScreenViewModel: HomeScreenViewModelType {
     
     // MARK: - Dependenices
     
-    private var apiService: APIServiceType!
+    private var apiService: APIServiceType
     var score: String?
     var maxScore: String?
-    
-    // MARK: - Private properties
-    
-    private var creditReportInfo: CreditReportInfo!
     
     // MARK: Init
     
@@ -44,7 +40,7 @@ final class HomeScreenViewModel: HomeScreenViewModelType {
     // MARK: - Public methods
     
     func didLoad(completion: @escaping (Result<Void, NetworkError>) -> Void) {
-        apiService.perform(CreditInfo.self, endpoint: Endpoint.creditInfo()) { [weak self] result in
+        apiService.perform(CreditInfo.self, endpoint: .creditInfo()) { [weak self] result in
             switch result {
             case .success(let creditInfo):
                 DispatchQueue.main.async {

@@ -15,13 +15,12 @@ enum HTTPMethod: String {
 struct Endpoint {
     let path: String
     let method: HTTPMethod
-    let timeOut: Double = 30
     
     // makeUrl
     func makeUrl(with baseUrl: URL) -> URL {
         let url = baseUrl.appendingPathComponent(path)
-        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
-        return components.url!
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false), let componentsUrl = components.url else { return url }
+        return componentsUrl
     }
 }
 

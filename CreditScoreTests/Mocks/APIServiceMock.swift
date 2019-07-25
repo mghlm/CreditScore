@@ -12,7 +12,7 @@ import Foundation
 final class APIServiceMock: APIServiceType {
     var isSucceded: Bool = true
     
-    func perform<T: Codable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void)  {
+    func perform<T: Decodable>(_ type: T.Type, endpoint: Endpoint, completion: @escaping (Result<T, NetworkError>) -> Void)  {
         if isSucceded {
             let model = CreditInfo(creditReportInfo: CreditReportInfo(score: 173, maxScoreValue: 700, minScoreValue: 0)) as! T
             completion(.success(model))

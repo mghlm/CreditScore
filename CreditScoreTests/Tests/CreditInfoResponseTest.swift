@@ -13,11 +13,13 @@ class CreditInfoResponseTest: XCTestCase {
     
     var creditInfoRespone: CreditInfo!
     var creditInfoReport: CreditReportInfo!
+    var transformer: Transformer!
 
     override func setUp() {
         let reader = DataReader()
+        let transformer = JSONTransformer()
         let data = try! reader.readFile(named: "credit_report_info", ofType: "json")
-        creditInfoRespone = try? JSONDecoder().decode(CreditInfo.self, from: data)
+        creditInfoRespone = try? transformer.decode(CreditInfo.self, from: data)
         creditInfoReport = creditInfoRespone.creditReportInfo
     }
 

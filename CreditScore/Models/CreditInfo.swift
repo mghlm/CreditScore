@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct CreditInfo: Codable {
+struct CreditInfo: Decodable {
     let creditReportInfo: CreditReportInfo
 }
 
-struct CreditReportInfo: Codable {
+struct CreditReportInfo: Decodable {
     let score: Int
     let maxScoreValue: Int
     let minScoreValue: Int
