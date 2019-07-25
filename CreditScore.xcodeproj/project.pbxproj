@@ -11,6 +11,7 @@
 		CC64A1C022E7B37E00E8A7AC /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64A1BF22E7B37E00E8A7AC /* DataReader.swift */; };
 		CC64A1C422E7B6B200E8A7AC /* EndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64A1C322E7B6B200E8A7AC /* EndpointTest.swift */; };
 		CC64A1CD22E9993C00E8A7AC /* TransformerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64A1CC22E9993C00E8A7AC /* TransformerTest.swift */; };
+		CC64A1D322E9A73C00E8A7AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CC64A1D222E9A73C00E8A7AC /* README.md */; };
 		CC64D79422E1C6D2000F4004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D79322E1C6D2000F4004 /* AppDelegate.swift */; };
 		CC64D7B422E1C6D3000F4004 /* CreditScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7B322E1C6D3000F4004 /* CreditScoreUITests.swift */; };
 		CC64D7C322E1C7B9000F4004 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64D7C222E1C7B9000F4004 /* HomeScreenViewController.swift */; };
@@ -51,6 +52,7 @@
 		CC64A1BF22E7B37E00E8A7AC /* DataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReader.swift; sourceTree = "<group>"; };
 		CC64A1C322E7B6B200E8A7AC /* EndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTest.swift; sourceTree = "<group>"; };
 		CC64A1CC22E9993C00E8A7AC /* TransformerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTest.swift; sourceTree = "<group>"; };
+		CC64A1D222E9A73C00E8A7AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CC64D79022E1C6D2000F4004 /* CreditScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC64D79322E1C6D2000F4004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC64D79822E1C6D2000F4004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		CC64D78722E1C6D2000F4004 = {
 			isa = PBXGroup;
 			children = (
+				CC64A1D222E9A73C00E8A7AC /* README.md */,
 				CC64D79222E1C6D2000F4004 /* CreditScore */,
 				CC64D7A722E1C6D3000F4004 /* CreditScoreTests */,
 				CC64D7B222E1C6D3000F4004 /* CreditScoreUITests */,
@@ -358,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC64A1D322E9A73C00E8A7AC /* README.md in Resources */,
 				CC64D7DF22E21BF6000F4004 /* credit_report_info.json in Resources */,
 				CC64D7DD22E21BDC000F4004 /* credit_info.json in Resources */,
 			);
